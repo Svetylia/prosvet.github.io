@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Итоговое практическое задание курса ProSvet: разработка и презентация собственного веб-проекта." />
+  <title>Итоговое практическое задание — ProSvet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="index.html"><b>S</b> ProSvet.</a>
+    <button class="menu" aria-label="Меню">☰</button>
+    <nav class="nav">
+      <a href="index.html">Главная</a><a class="active" href="program.html">Программа</a><a href="about.html">О курсе</a>
+    </nav>
+  </header>
+  <main class="wrap final-wrap">
+    <section class="final-hero">
+      <div class="eyebrow">ProSvet · Финальный этап</div>
+      <div class="final-hero__layout">
+        <div>
+          <p class="final-kicker">От знаний — к собственному решению</p>
+          <h1 class="h1">Итоговое практическое<br class="desktop-break"/> задание по курсу</h1>
+          <p class="lead">Соберите знания четырёх модулей в одном учебном веб-проекте: от исследования аудитории и визуальной концепции до реализации, проверки и презентации.</p>
+          <a class="btn" href="#stages">Посмотреть этапы работы ↓</a>
+        </div>
+        <div class="final-emblem" aria-hidden="true"><span>01</span><i></i><span>04</span><small>IDEA → PRODUCT</small></div>
+      </div>
+      <div class="final-meta"><span>Самостоятельная работа</span><span>4 учебных модуля</span><span>Один целостный проект</span></div>
+    </section>
+
+    <section class="final-intro-grid">
+      <article class="final-purpose"><span class="tag">Цель проекта</span><h2>Показать полный цикл создания цифрового продукта</h2><p>Важно не просто собрать страницу, а объяснить, для кого она создана, какие задачи решает и почему выбраны именно такие решения.</p></article>
+      <aside class="final-art" aria-hidden="true">
+        <div class="final-art__orbit final-art__orbit--one"></div>
+        <div class="final-art__orbit final-art__orbit--two"></div>
+        <div class="final-art__core"><span>IDEA</span><b>✳</b><small>DESIGN · CREATE · SHARE</small></div>
+        <i class="final-art__dot final-art__dot--one"></i><i class="final-art__dot final-art__dot--two"></i><i class="final-art__dot final-art__dot--three"></i>
+      </aside>
+    </section>
+
+    <section id="stages" class="final-section">
+      <div class="final-section__heading"><div><div class="eyebrow">План выполнения</div><h2 class="section-title">Четыре этапа итоговой работы</h2></div></div>
+      <div class="stage-grid">
+        <article class="stage-card"><span class="stage-number">01</span><div class="tag">Модуль 1 · Аналитика и UX</div><h3>Исследуйте и спланируйте</h3><ul><li>Опишите назначение сайта и целевую аудиторию.</li><li>Сформулируйте задачи пользователя.</li><li>Подготовьте структуру страниц и схему навигации.</li></ul></article>
+        <article class="stage-card"><span class="stage-number">02</span><div class="tag">Модуль 2 · UI-дизайн</div><h3>Создайте визуальную концепцию</h3><ul><li>Разработайте прототип или макет основных страниц.</li><li>Определите типографику, цвета и сетку.</li><li>Соберите единый набор компонентов интерфейса.</li></ul></article>
+        <article class="stage-card"><span class="stage-number">03</span><div class="tag">Модуль 3 · Frontend</div><h3>Реализуйте интерфейс</h3><ul><li>Подготовьте HTML-структуру и CSS-оформление.</li><li>Добавьте интерактивные элементы на JavaScript.</li><li>Адаптируйте страницы под разные экраны.</li></ul></article>
+        <article class="stage-card"><span class="stage-number">04</span><div class="tag">Модуль 4 · Запуск и развитие</div><h3>Проверьте и представьте</h3><ul><li>Добавьте базовую SEO-оптимизацию и план аналитики.</li><li>Составьте чек-лист тестирования и план запуска.</li><li>Подготовьте презентацию и обоснуйте решения.</li></ul></article>
+      </div>
+    </section>
+
+    <section class="final-deliverables">
+      <div><div class="eyebrow">Что должно получиться</div><h2>Итоговый результат</h2><p>Готовый учебный веб-проект, который демонстрирует весь путь — от идеи и проектирования до проверки, публикации и дальнейшего развития.</p></div>
+      <div class="deliverable-list"><div><span>01</span>Работающий веб-проект или интерактивный прототип</div><div><span>02</span>Единая визуальная система и понятная навигация</div><div><span>03</span>Адаптивная версия и проверенные сценарии</div><div><span>04</span>Краткая презентация с аргументацией решений</div></div>
+    </section>
+
+    <button class="planner-toggle" type="button" aria-controls="project-planner" aria-expanded="false"><span class="planner-toggle__icon">✓</span><span>Мой планер</span><span class="planner-toggle__count" id="planner-count">0/7</span></button>
+    <div class="planner-backdrop" hidden></div>
+    <aside class="project-planner" id="project-planner" aria-hidden="true" aria-label="Личный планер проекта">
+      <div class="project-planner__head"><div><div class="eyebrow">Личный планер</div><h2>Готовность проекта</h2></div><button class="planner-close" type="button" aria-label="Закрыть планер">×</button></div>
+      <p class="project-planner__intro">Отмечайте выполненные пункты — ваш список сохранится в этом браузере.</p>
+      <div class="planner-progress"><span id="planner-progress-fill"></span></div>
+      <p class="planner-progress__label" id="planner-progress-label">Выполнено 0 из 7</p>
+      <div class="checklist-items">
+        <label><input type="checkbox" /> Цель сайта и целевая аудитория описаны.</label>
+        <label><input type="checkbox" /> Структура и навигация понятны.</label>
+        <label><input type="checkbox" /> Основные страницы оформлены в едином стиле.</label>
+        <label><input type="checkbox" /> Интерактивные элементы и адаптивность проверены.</label>
+        <label><input type="checkbox" /> Подготовлены базовые SEO-настройки и план аналитики.</label>
+        <label><input type="checkbox" /> Ошибки после тестирования исправлены.</label>
+        <label><input type="checkbox" /> Презентация проекта готова.</label>
+      </div>
+      <p class="checklist-footnote">Отметки видны только вам и не отправляются преподавателю.</p>
+    </aside>
+
+    <section class="final-finish"><div class="final-finish__symbol">S</div><div><div class="eyebrow">Финиш курса</div><h2>Покажите не только результат, но и ход мыслей</h2><p>Хороший проект — это не набор эффектных экранов, а продуманное решение, которое вы можете объяснить и защитить.</p><a class="btn" href="program.html">Вернуться к программе курса ↗</a></div></section>
+  </main>
+  <footer class="footer">ProSvet. · Учебный курс по цифровому дизайну</footer>
+  <button class="top" aria-label="Наверх">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>
