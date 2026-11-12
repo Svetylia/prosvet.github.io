@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Современная вёрстка: Flexbox и CSS Grid — учебная лекция курса ProSvet." name="description"/>
+  <title>
+   Лекция 11 — ProSvet
+  </title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="../css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="header">
+   <a class="brand" href="../index.html">
+    <b>
+     S
+    </b>
+    ProSvet.
+   </a>
+   <button aria-label="Меню" class="menu">
+    ☰
+   </button>
+   <nav class="nav">
+    <a href="../index.html">
+     Главная
+    </a>
+    <a class="active" href="../program.html">
+     Программа
+    </a>
+    <a href="../practice.html">
+     Практика
+    </a>
+    <a href="../about.html">
+     О курсе
+    </a>
+   </nav>
+  </header>
+  <main class="wrap">
+   <section class="intro">
+    <div class="eyebrow">
+     Модуль 3 · Основы Frontend-разработки · Лекция 11
+    </div>
+    <h1 class="h1">
+     Современная вёрстка: Flexbox и CSS Grid
+    </h1>
+    <p class="lead">
+     Учебный материал · упражнение по желанию · вопросы для самопроверки
+    </p>
+   </section>
+   <article class="article">
+    <div class="callout">
+     <b>
+      Цель лекции
+     </b>
+     <p>
+      изучить современные инструменты построения веб-макетов, разобраться в Flexbox и CSS Grid и научиться выбирать подходящий способ компоновки.
+     </p>
+    </div>
+    <h2>
+     11.1. Понятие современной вёрстки
+    </h2>
+    <p>
+     Вёрстка — процесс преобразования дизайн-макета в HTML-структуру и CSS-стили, которые браузер использует для отображения веб-страницы.
+    </p>
+    <p>
+     Ранее для построения сложных макетов часто применялись таблицы, плавающие элементы и позиционирование. Однако современные CSS-технологии предоставляют более гибкие инструменты, позволяющие создавать адаптивные интерфейсы с меньшим количеством кода.
+    </p>
+    <p>
+     К наиболее важным технологиям относятся Flexbox и CSS Grid.
+    </p>
+    <p>
+     Flexbox предназначен преимущественно для организации элементов вдоль одной оси — горизонтальной или вертикальной.
+    </p>
+    <p>
+     CSS Grid позволяет создавать двумерные сетки, одновременно управляя строками и колонками.
+    </p>
+    <p>
+     Обе технологии широко используются в современной веб-разработке и могут применяться совместно.
+    </p>
+    <h2>
+     11.2. Flexbox: организация элементов в одном направлении
+    </h2>
+    <p>
+     Flexbox — модель компоновки CSS, предназначенная для гибкого размещения элементов внутри контейнера.
+    </p>
+    <p>
+     Для активации Flexbox родительскому элементу задаётся свойство:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS
+     </div>
+     <pre class="code-example__pre"><code>.container {
+display: flex;
+}</code></pre>
+    </div>
+    <p>
+     После этого непосредственные дочерние элементы становятся flex-элементами.
+    </p>
+    <p>
+     Одним из главных параметров является flex-direction, определяющий направление расположения элементов.
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS
+     </div>
+     <pre class="code-example__pre"><code>.container {
+display: flex;
+flex-direction: row;
+}</code></pre>
+    </div>
+    <p>
+     Значение row располагает элементы в строку, а column — в колонку.
+    </p>
+    <p>
+     Для управления распределением пространства применяется justify-content.
+    </p>
+    <p>
+     Например:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS
+     </div>
+     <pre class="code-example__pre"><code>.container {
+display: flex;
+justify-content: space-between;
+}</code></pre>
+    </div>
+    <p>
+     Это распределяет свободное пространство между элементами.
+    </p>
+    <p>
+     Свойство align-items управляет выравниванием элементов по поперечной оси.
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS · выравнивание элементов Flexbox
+     </div>
+     <pre class="code-example__pre"><code>.container {
+  display: flex;
+  align-items: center;
+}</code></pre>
+    </div>
+    <p>
+     Такой подход часто применяется при создании шапки сайта, где логотип и навигация должны располагаться на одной линии.
+    </p>
+    <p>
+     Другие полезные свойства:
+    </p>
+    <ul>
+     <li>
+      gap — расстояние между элементами;
+     </li>
+     <li>
+      flex-wrap — возможность переноса элементов на новую строку;
+     </li>
+     <li>
+      flex-grow — способность элемента увеличиваться;
+     </li>
+     <li>
+      flex-shrink — способность элемента уменьшаться;
+     </li>
+     <li>
+      flex-basis — исходный размер элемента по главной оси.
+     </li>
+    </ul>
+    <h2>
+     11.3. Пример использования Flexbox
+    </h2>
+    <p>
+     Предположим, необходимо создать навигационную панель образовательного сайта. Она должна включать логотип, ссылки на разделы и кнопку входа.
+    </p>
+    <p>
+     HTML:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      HTML
+     </div>
+     <pre class="code-example__pre"><code>&lt;header class="header"&gt;
+&lt;div class="logo"&gt;ProSvet&lt;/div&gt;
+&lt;nav class="navigation"&gt;
+&lt;a href="#"&gt;Главная&lt;/a&gt;
+&lt;a href="#"&gt;Лекции&lt;/a&gt;
+&lt;a href="#"&gt;О курсе&lt;/a&gt;
+&lt;/nav&gt;
+&lt;button&gt;Войти&lt;/button&gt;
+&lt;/header&gt;</code></pre>
+    </div>
+    <p>
+     CSS:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS · оформление навигационной панели
+     </div>
+     <pre class="code-example__pre"><code>.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+}</code></pre>
+    </div>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS
+     </div>
+     <pre class="code-example__pre"><code>.navigation {
+display: flex;
+gap: 20px;
+}</code></pre>
+    </div>
+    <p>
+     Flexbox позволяет расположить все элементы горизонтально и выровнять их по вертикали без необходимости вручную рассчитывать координаты каждого объекта.
+    </p>
+    <h2>
+     11.4. CSS Grid: построение двумерных сеток
+    </h2>
+    <p>
+     CSS Grid — технология компоновки, предназначенная для построения сложных сеточных макетов.
+    </p>
+    <p>
+     В отличие от Flexbox, который ориентирован на одну ось, Grid позволяет одновременно управлять колонками и строками.
+    </p>
+    <p>
+     Для создания сетки используется:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS
+     </div>
+     <pre class="code-example__pre"><code>.grid-container {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap: 20px;
+}</code></pre>
+    </div>
+    <p>
+     В данном примере создаются три колонки одинаковой ширины.
+    </p>
+    <p>
+     Единица fr обозначает долю доступного пространства. Например:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS · пропорции колонок Grid
+     </div>
+     <pre class="code-example__pre"><code>.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}</code></pre>
+    </div>
+    <p>
+     означает, что первая колонка получит в два раза больше свободного пространства, чем вторая.
+    </p>
+    <p>
+     Для задания количества строк применяется grid-template-rows.
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS
+     </div>
+     <pre class="code-example__pre"><code>.grid-container {
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-template-rows: auto auto;
+}</code></pre>
+    </div>
+    <p>
+     С помощью Grid можно создавать карточные каталоги, галереи, журнальные макеты, сложные информационные страницы и другие структуры.
+    </p>
+    <h2>
+     11.5. Пример создания сетки карточек
+    </h2>
+    <p>
+     Рассмотрим каталог лекций, состоящий из нескольких карточек.
+    </p>
+    <p>
+     HTML:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      HTML
+     </div>
+     <pre class="code-example__pre"><code>&lt;div class="lecture-grid"&gt;
+&lt;article class="lecture-card"&gt;
+&lt;h3&gt;Лекция 1&lt;/h3&gt;
+&lt;p&gt;Введение в веб-дизайн&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class="lecture-card"&gt;
+&lt;h3&gt;Лекция 2&lt;/h3&gt;
+&lt;p&gt;UX-исследования&lt;/p&gt;
+&lt;/article&gt;
+&lt;article class="lecture-card"&gt;
+&lt;h3&gt;Лекция 3&lt;/h3&gt;
+&lt;p&gt;Прототипирование&lt;/p&gt;
+&lt;/article&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+    <p>
+     CSS:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS · сетка карточек лекций
+     </div>
+     <pre class="code-example__pre"><code>.lecture-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.lecture-card {
+  padding: 24px;
+}</code></pre>
+    </div>
+    <p>
+     Запись repeat(3, 1fr) означает, что браузер создаст три одинаковые колонки.
+    </p>
+    <p>
+     Для более гибкой сетки можно использовать:
+    </p>
+    <div class="code-example">
+     <div class="code-example__label">
+      CSS · адаптивная сетка карточек
+     </div>
+     <pre class="code-example__pre"><code>.lecture-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}</code></pre>
+    </div>
+    <p>
+     Здесь браузер автоматически определяет, сколько карточек помещается в строке, учитывая минимальную ширину 240 пикселей.
+    </p>
+    <h2>
+     11.6. Flexbox и Grid: когда что использовать
+    </h2>
+    <table class="content-table comparison-table">
+     <thead>
+      <tr>
+       <th>
+        Критерий
+       </th>
+       <th>
+        Flexbox
+       </th>
+       <th>
+        CSS Grid
+       </th>
+      </tr>
+     </thead>
+     <tbody>
+      <tr>
+       <td>
+        Основное назначение
+       </td>
+       <td>
+        Одномерная компоновка
+       </td>
+       <td>
+        Двумерная компоновка
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Основная ось
+       </td>
+       <td>
+        Одна
+       </td>
+       <td>
+        Две
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Типичные задачи
+       </td>
+       <td>
+        Навигация, кнопки, строки
+       </td>
+       <td>
+        Сетки карточек, макеты страниц
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Управление строками и колонками
+       </td>
+       <td>
+        Ограниченное
+       </td>
+       <td>
+        Полноценное
+       </td>
+      </tr>
+      <tr>
+       <td>
+        Совместное применение
+       </td>
+       <td>
+        Да
+       </td>
+       <td>
+        Да
+       </td>
+      </tr>
+     </tbody>
+    </table>
+    <p>
+     Важно понимать, что Flexbox и Grid не конкурируют друг с другом. Они решают разные задачи и часто используются вместе.
+    </p>
+    <p>
+     Например, общую структуру страницы можно построить с помощью Grid, а элементы навигации внутри шапки — с помощью Flexbox.
+    </p>
+    <h2>
+     Выводы по лекции
+    </h2>
+    <p>
+     Flexbox и CSS Grid являются основными инструментами современной CSS-вёрстки. Flexbox удобен для размещения элементов вдоль одной оси, а Grid позволяет создавать сложные двумерные сетки. Правильный выбор технологии помогает реализовывать макеты более гибко, сокращает количество вспомогательного кода и облегчает адаптацию интерфейсов.
+    </p>
+    <div class="task"><div class="tag">Попробуйте на практике · по желанию</div><h2>Применяем знания</h2><p>
+     Создайте страницу каталога образовательных лекций. Разместите карточки с помощью CSS Grid, а верхнюю навигационную панель оформите через Flexbox. Проверьте, как макет изменяется при уменьшении ширины окна браузера.
+    </p></div>
+    <h2>
+     Вопросы для самопроверки
+    </h2>
+    <ol>
+     <li>
+      Что такое Flexbox?
+     </li>
+     <li>
+      Какое свойство включает Flexbox?
+     </li>
+     <li>
+      Для чего используется justify-content?
+     </li>
+     <li>
+      Чем align-items отличается от justify-content?
+     </li>
+     <li>
+      Что такое CSS Grid?
+     </li>
+     <li>
+      Что обозначает единица fr?
+     </li>
+     <li>
+      В чём основное различие Flexbox и Grid?
+     </li>
+     <li>
+      Почему обе технологии можно использовать в одном проекте?
+     </li>
+    </ol>
+    <form class="quiz">
+     <div class="tag">
+      Самопроверка
+     </div>
+     <h2>
+      Мини-тест по лекции
+     </h2>
+     <div class="question" data-correct="0">
+      <b>
+       Для какой задачи в первую очередь подходит Flexbox?
+      </b>
+      <label>
+       <input name="q1" type="radio" value="0"/>
+       Одномерное расположение элементов
+      </label>
+      <label>
+       <input name="q1" type="radio" value="1"/>
+       Создание двумерной сетки
+      </label>
+      <label>
+       <input name="q1" type="radio" value="2"/>
+       Оптимизация изображений
+      </label>
+     </div>
+     <div class="question" data-correct="1">
+      <b>
+       Что обозначает единица fr в Grid?
+      </b>
+      <label>
+       <input name="q2" type="radio" value="0"/>
+       Фиксированный пиксель
+      </label>
+      <label>
+       <input name="q2" type="radio" value="1"/>
+       Долю доступного пространства
+      </label>
+      <label>
+       <input name="q2" type="radio" value="2"/>
+       Размер шрифта
+      </label>
+     </div>
+     <button class="btn" type="submit">
+      Проверить ответы
+     </button>
+     <p aria-live="polite" class="result">
+     </p>
+    </form>
+   </article>
+  </main>
+  <footer class="footer">
+   ProSvet. · Учебный курс по цифровому дизайну
+  </footer>
+  <button aria-label="Наверх" class="top">
+   ↑
+  </button>
+  <script src="../js/script.js">
+  </script>
+ </body>
+</html>
